@@ -1,0 +1,142 @@
+Erstelle eine moderne, schnelle und DSGVO-konforme Website für notprofi24.at (Österreich, österreichweit tätig).
+Zielgruppen: Hausverwaltungen (B2B) und Privatkunden (B2C).
+Leistungsbereiche: Installateur, Elektriker, Schlosser, Dachdecker, Glaser.
+Wortwahl: Benutze nicht zu oft das Wort „vermitteln“. Nutze stattdessen abwechslungsreiche Synonyme wie koordiniert, organisiert, beauftragt, Einsatzsteuerung, Partnernetzwerk, Auftragsweitergabe. Ton: vertrauenswürdig, professionell, klar.
+
+Brand/CTA:
+
+24/7 erreichbar, Telefon: 0676 531 6388 (oben fix als „Jetzt anrufen“; tel:+436765316388)
+
+Primäre CTAs: „Jetzt anrufen“, „Notfall melden“, „Partner werden“
+
+Slogan (Hero): „Schnelle Hilfe. Österreichweit. Ein Anruf – wir organisieren den Rest.“
+
+Unterzeile (Hero): „Für Hausverwaltungen & Privatkunden: Sanitär, Elektro, Schloss, Dach, Glas.“
+
+Seiten & Struktur (Sitemap):
+
+Startseite
+
+Hero mit Telefonschaltfläche und „Notfall melden“-Button (öffnet Formular)
+
+Kurzvorstellung: Wer wir sind, warum zentraler Ansprechpartner sinnvoll ist
+
+Leistungen (5 Kacheln: Installateur, Elektriker, Schlosser, Dachdecker, Glaser) mit Kurzbeschreibung
+
+Vorteile für Hausverwaltungen (z. B. 24/7-Erreichbarkeit, SLA/Response-Zeiten, ein Ansprechpartner, dokumentierte Einsätze)
+
+Vorteile für Privatkunden (schnelle Hilfe, transparente Abläufe, qualifizierte Partner)
+
+Ablauf in 3 Schritten: Anliegen → wir koordinieren → Fachbetrieb fährt los
+
+Kundenstimmen/Referenzen (Platzhalter)
+
+Bundesländer-Übersicht: „Österreichweit verfügbar“ (Bundesländer als Liste)
+
+Leistungen
+
+Eigene Sektion je Gewerk (Problembeispiele, typische Einsätze, was wir organisieren)
+
+Für Hausverwaltungen
+
+Nutzen, Prozess, erreichbare Gewerke, Beispiel-SLA (z. B. Rückruf < 5 Min, Disposition < 15 Min)
+
+Option „keine Zusatzkosten für die Verwaltung“ (Einnahme über Partnerbetriebe als internes Modell, ohne es auszubreiten)
+
+Für Partnerbetriebe
+
+Warum mitmachen? Mehr Aufträge ohne Werbekosten, faire fixe Auftragsgebühr, klare Abläufe
+
+CTA „Partner werden“ (Formular)
+
+Preise
+
+Klare Aussage: Für Hausverwaltungen & Privatkunden fallen keine zusätzlichen Kosten an.
+
+Für Partnerbetriebe: Fixbetrag pro Auftrag: 30 € (kurz & sachlich, ohne das Wort „Vermittlung“ zu betonen)
+
+Kontakt & Notfall
+
+Telefonnummer groß, Kontaktformular „Notfall melden“
+
+Öffnungszeiten: „24/7“
+
+Karte (österreichweit Hinweis genügt; keine einzelne Adresse nötig)
+
+FAQ
+
+Häufige Fragen: Reaktionszeiten, Gewährleistung/Haftung liegt beim ausführenden Betrieb, Datenschutz, Regionen, Zahlungsablauf
+
+Rechtliches
+
+Impressum, AGB, Datenschutz (eigene Seiten, im Footer verlinkt)
+
+Formulare (Pflichtfelder & Logik):
+
+Notfall melden (Startseite & Kontakt):
+
+Felder: Name, Firma (optional), E-Mail, Telefon, Adresse + Stiege/Top, Bundesland, Gewerk (Dropdown: Installateur, Elektriker, Schlosser, Dachdecker, Glaser), Dringlichkeit (hoch/mittel/niedrig), Beschreibung, Foto-Upload (optional), Checkbox „Ich stimme der Datenschutzerklärung zu“
+
+Absenden → Bestätigungstext + E-Mail an Admin (Platzhalter) + Dankesseite
+
+Partner werden:
+
+Felder: Firmenname, Ansprechpartner, E-Mail, Telefon, Gewerke, Einsatzgebiet (PLZ/Bundesland), UID-Nr., Website (optional), Nachricht, Checkbox Datenschutz
+
+Design & Technik:
+
+Stil: klar, seriös, hoher Kontrast, mobile-first, schnelle Ladezeiten
+
+Farbidee: Dunkelblau/Anthrazit für Vertrauen, Akzent in Gelb/Orange für Notfall-Signale
+
+Feste Kopfzeile mit Telefon-Button; Sticky Bar „24/7 Notdienst“
+
+Icons je Gewerk (Installateur, Blitz, Schlüssel, Dach, Glas)
+
+Barrierefreiheit: Alt-Texte, klare Fokuszustände, ausreichende Schriftgrößen
+
+Performance: Bildkomprimierung, lazy loading, saubere Semantik
+
+SEO & Snippets:
+
+Seitentitel (Start): „Notprofi24 – 24/7 Hilfe für Hausverwaltungen & Privat | Österreichweit“
+
+Meta-Description: „Installateur, Elektriker, Schlosser, Dachdecker, Glaser – wir koordinieren Einsätze österreichweit. Ein Anruf genügt: 0676 531 6388.“
+
+H1/H2 logisch, interne Verlinkung (Start → Leistungen → Kontakt)
+
+Strukturiertes Daten-Markup (JSON-LD): Organization + Service je Gewerk; LocalBusiness generisch mit „areaServed: Austria“
+
+Open-Graph/Twitter Cards (Logo, Claim, Telefon)
+
+Recht & DSGVO:
+
+Impressum (Platzhalter für Firmen-/Gewerbedaten: freie Gewerbe „Vermittlung von Werk- und Dienstleistungsverträgen“ eintragen, sobald verfügbar)
+
+AGB (Platzhalter: Rolle als koordinierende Stelle, Ausführung & Gewährleistung durch den beauftragten Fachbetrieb)
+
+Datenschutzerklärung (Kontaktformular, Logs, Cookies, Auftragsverarbeiter; Hinweis auf Telefon/WhatsApp falls genutzt)
+
+Cookie-Hinweis (nur falls wirklich Cookies/Tracking; Consent-Banner)
+
+Telefon-Links tel: und dezente WhatsApp-Option (optional)
+
+Texte – Beispiele (verwenden/variieren):
+
+Hero-Claim: „Schnelle Hilfe. Österreichweit. Ein Anruf – wir organisieren den Rest.“
+
+Nutzen Hausverwaltungen: „Ein Ansprechpartner statt fünf. 24/7 erreichbar. Dokumentierte Einsätze. Verlässliche Einsatzsteuerung.“
+
+Nutzen Privat: „Kein Herumtelefonieren – wir finden den passenden Fachbetrieb und steuern den Einsatz.“
+
+Ablaufpunkte: „Anliegen melden → Disposition → Fachbetrieb fährt los“
+
+Preis-Hinweis: „Für Sie als Auftraggeber entstehen keine zusätzlichen Kosten.“
+
+Footer:
+
+Links: Impressum | AGB | Datenschutz | Kontakt
+
+Kurztext: „notprofi24.at – Österreichweit für Sie da. 24/7: 0676 531 6388“
+
+Ergebnis: Eine vollständige, produktionsreife Website mit allen Seiten, Navigation, Formularen, SEO-Metadaten, strukturierten Daten und rechtlichen Seiten. Wort „vermitteln“ sparsam verwenden, stattdessen Synonyme. Sprache: Deutsch (Österreich).

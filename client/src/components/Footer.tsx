@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className="bg-secondary text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <Logo className="w-10 h-10 text-white" />
@@ -23,19 +22,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Services</h4>
+            <h4 className="font-semibold text-lg mb-4">Leistungen</h4>
             <ul className="space-y-2 text-blue-200">
-              <li><Link href="/leistungen" className="hover:text-white" data-testid="footer-installateur">Installateur</Link></li>
-              <li><Link href="/leistungen" className="hover:text-white" data-testid="footer-elektriker">Elektriker</Link></li>
-              <li><Link href="/leistungen" className="hover:text-white" data-testid="footer-schlosser">Schlosser</Link></li>
-              <li><Link href="/leistungen" className="hover:text-white" data-testid="footer-dachdecker">Dachdecker</Link></li>
-              <li><Link href="/leistungen" className="hover:text-white" data-testid="footer-glaser">Glaser</Link></li>
+              <li><Link href="/leistungen#installateur" className="hover:text-white" data-testid="footer-installateur">Installateur</Link></li>
+              <li><Link href="/leistungen#elektriker" className="hover:text-white" data-testid="footer-elektriker">Elektriker</Link></li>
+              <li><Link href="/leistungen#schlosser" className="hover:text-white" data-testid="footer-schlosser">Schlosser</Link></li>
+              <li><Link href="/leistungen#dachdecker" className="hover:text-white" data-testid="footer-dachdecker">Dachdecker</Link></li>
+              <li><Link href="/leistungen#glaser" className="hover:text-white" data-testid="footer-glaser">Glaser</Link></li>
             </ul>
           </div>
 
-          {/* Legal Links */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Rechtliches</h4>
             <ul className="space-y-2 text-blue-200">
@@ -47,7 +44,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8 text-center text-blue-200">
           <p>&copy; 2024 Notprofi24.at – Österreichweit für Sie da. 24/7: 0676 6166646</p>
         </div>

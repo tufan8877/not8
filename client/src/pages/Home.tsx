@@ -36,8 +36,8 @@ export default function Home() {
         "Verstopfte Leitungen und Abflüsse",
         "Heizungs- und Warmwasserstörungen",
       ],
-      iconBg: "bg-blue-50",
-      iconColor: "text-primary",
+      iconBg: "bg-slate-100",
+      iconColor: "text-slate-900",
     },
     {
       icon: Zap,
@@ -49,8 +49,8 @@ export default function Home() {
         "Kurzschluss und Sicherungsprobleme",
         "Elektrische Notfälle in Gebäuden",
       ],
-      iconBg: "bg-yellow-50",
-      iconColor: "text-warning",
+      iconBg: "bg-slate-100",
+      iconColor: "text-slate-900",
     },
     {
       icon: Key,
@@ -62,8 +62,8 @@ export default function Home() {
         "Schäden nach Einbruch",
         "Provisorische Sicherung und Austausch",
       ],
-      iconBg: "bg-orange-50",
-      iconColor: "text-emergency",
+      iconBg: "bg-slate-100",
+      iconColor: "text-slate-900",
     },
     {
       icon: HomeIcon,
@@ -75,8 +75,8 @@ export default function Home() {
         "Sicherung loser Dachteile",
         "Schäden an Dachrinne und Eindeckung",
       ],
-      iconBg: "bg-green-50",
-      iconColor: "text-green-600",
+      iconBg: "bg-slate-100",
+      iconColor: "text-slate-900",
     },
     {
       icon: Eye,
@@ -88,8 +88,8 @@ export default function Home() {
         "Fenster- und Schaufensterschäden",
         "Austausch beschädigter Glaselemente",
       ],
-      iconBg: "bg-cyan-50",
-      iconColor: "text-cyan-600",
+      iconBg: "bg-slate-100",
+      iconColor: "text-slate-900",
     },
   ];
 
@@ -348,7 +348,7 @@ export default function Home() {
                   className="rounded-3xl border border-border bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
                   data-testid={`service-card-${service.title.toLowerCase()}`}
                 >
-                  <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${service.iconBg}`}>
+                  <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 ${service.iconBg}`}>
                     <IconComponent className={`h-7 w-7 ${service.iconColor}`} />
                   </div>
                   <h3 className="mb-3 text-2xl font-semibold text-slate-900">{service.title}</h3>
@@ -356,7 +356,7 @@ export default function Home() {
                   <div className="space-y-3 border-t border-border pt-5">
                     {service.points.map((point, index) => (
                       <div key={index} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
-                        <Check className="mt-0.5 h-4 w-4 text-primary" />
+                        <Check className="mt-0.5 h-4 w-4 text-slate-900" />
                         <span>{point}</span>
                       </div>
                     ))}

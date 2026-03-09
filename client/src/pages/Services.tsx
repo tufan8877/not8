@@ -1,253 +1,229 @@
-import { Wrench, Zap, Key, Home as HomeIcon, Eye } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock3, Eye, Home as HomeIcon, Key, Phone, ShieldCheck, Wrench, Zap } from "lucide-react";
 
 export default function Services() {
   const services = [
     {
+      id: "installateur",
       icon: Wrench,
-      title: "Installateur",
-      description: "Rohrbrüche, verstopfte Abflüsse, defekte Heizungen, Wasserschäden – wir organisieren schnelle Hilfe bei allen Sanitärnotfällen.",
-      emergencyTypes: [
-        "Rohrbruch mit Wasseraustritt",
-        "Verstopfte Toiletten und Abflüsse",
-        "Heizungsausfall bei kalten Temperaturen", 
-        "Defekte Warmwasserboiler",
-        "Undichte Wasserleitungen",
-        "Gefrorene Rohre"
+      title: "Installateur-Notdienst",
+      description:
+        "Bei Rohrbruch, Verstopfung, Heizungsausfall oder Wasserschaden koordinieren wir rasch den passenden Sanitär-Fachbetrieb.",
+      focus: ["Rohrbruch & Leckortung", "Abfluss- und WC-Verstopfungen", "Heizungs- und Warmwasserausfall"],
+      cases: [
+        "Sofortmaßnahmen zur Schadensbegrenzung",
+        "Koordination des passenden Fachbetriebs",
+        "Unterstützung bei Dokumentation für Versicherungen",
       ],
-      typicalCases: [
-        "Wasserschaden eindämmen und Ursache beheben",
-        "Notfallreparaturen an Sanitäranlagen",
-        "Schnelle Rohrreinigung bei Verstopfungen",
-        "Heizungsnotdienst bei Totalausfall"
-      ],
-      coordination: [
-        "Sofortige Schadensaufnahme via Telefon",
-        "Direkter Kontakt zu Sanitärnotdienst",
-        "Koordination von Trocknungsmaßnahmen",
-        "Dokumentation für Versicherung"
-      ],
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
-      iconBg: "bg-blue-100",
-      iconColor: "text-primary"
     },
     {
+      id: "elektriker",
       icon: Zap,
-      title: "Elektriker",
-      description: "Stromausfälle, defekte Sicherungen, Kurzschlüsse – unsere Elektrofachkräfte sorgen für sichere Lösungen.",
-      emergencyTypes: [
-        "Totalausfall der Stromversorgung",
-        "Defekte Sicherungen und FI-Schalter",
-        "Kurzschlüsse in der Installation",
-        "Ausfall der Notbeleuchtung",
-        "Elektrische Störungen in Aufzügen",
-        "Blitzschäden an elektrischen Anlagen"
+      title: "Elektriker-Notdienst",
+      description:
+        "Bei Stromausfall, Kurzschluss oder Defekt an Sicherungen organisieren wir sichere und professionelle Hilfe durch qualifizierte Elektrofachkräfte.",
+      focus: ["Stromausfall & Sicherungen", "Kurzschluss & elektrische Störungen", "Sicherheitsrelevante Defekte"],
+      cases: [
+        "Ersteinschätzung der Situation am Telefon",
+        "Rasche Vermittlung eines Elektrofachbetriebs",
+        "Koordination sicherheitsrelevanter Maßnahmen vor Ort",
       ],
-      typicalCases: [
-        "Stromversorgung schnellstmöglich wiederherstellen",
-        "Sicherheitsrelevante Elektroinstallationen prüfen",
-        "Notbeleuchtung installieren oder reparieren",
-        "Provisorische Stromversorgung einrichten"
-      ],
-      coordination: [
-        "Sicherheitscheck vor Ort-Einsatz",
-        "Direkter Kontakt zu Elektrofachbetrieb",
-        "Organisation von Ersatzteilen",
-        "Koordination mit Netzbetreiber falls nötig"
-      ],
-      bgColor: "bg-yellow-50",
-      borderColor: "border-yellow-200", 
-      iconBg: "bg-yellow-100",
-      iconColor: "text-warning"
     },
     {
+      id: "schlosser",
       icon: Key,
-      title: "Schlosser",
-      description: "Türöffnungen, Schloss-Reparaturen, Sicherheitstechnik – wir besorgen Ihnen wieder Zugang zu Ihren Räumen.",
-      emergencyTypes: [
-        "Ausgesperrt ohne Schlüssel",
-        "Defekte Türschlösser",
-        "Einbruchschäden an Türen und Fenstern",
-        "Klemmendes oder blockiertes Schloss",
-        "Abgebrochene Schlüssel im Schloss",
-        "Sicherheitsrelevante Schließanlagen"
+      title: "Schlüsseldienst & Schlossservice",
+      description:
+        "Ob ausgesperrt, defektes Schloss oder Schaden nach einem Einbruch: Wir koordinieren verlässliche Hilfe für raschen Zugang und Absicherung.",
+      focus: ["Türöffnungen", "Schlossreparaturen", "Sofortmaßnahmen nach Einbruch"],
+      cases: [
+        "Vermittlung eines passenden Schlüsseldienstes",
+        "Koordination von Reparatur oder Tausch",
+        "Organisation provisorischer Sicherheitsmaßnahmen",
       ],
-      typicalCases: [
-        "Schadenfreie Türöffnung bei Aussperrung",
-        "Schlossreparatur oder -austausch",
-        "Provisorische Sicherung nach Einbruch",
-        "Installation neuer Sicherheitstechnik"
-      ],
-      coordination: [
-        "Identitätsprüfung vor Türöffnung",
-        "Direkter Kontakt zu Schlüsseldienst",
-        "Organisation von Sicherheitslösungen",
-        "Dokumentation von Schäden"
-      ],
-      bgColor: "bg-orange-50",
-      borderColor: "border-orange-200",
-      iconBg: "bg-orange-100",
-      iconColor: "text-emergency"
     },
     {
+      id: "dachdecker",
       icon: HomeIcon,
-      title: "Dachdecker",
-      description: "Sturmschäden, undichte Dächer, abgedeckte Ziegel – schnelle Notabdichtung verhindert weitere Schäden.",
-      emergencyTypes: [
-        "Sturmschäden am Dach",
-        "Undichte Stellen mit Wassereintritt",
-        "Abgedeckte oder gelockerte Ziegel",
-        "Beschädigte Dachrinnen",
-        "Hagelschäden an der Dacheindeckung",
-        "Schäden an Dachabdichtung"
+      title: "Dachdecker-Notdienst",
+      description:
+        "Bei Sturmschäden, Wassereintritt oder beschädigten Dachteilen sorgen wir für eine schnelle Koordination von Notabdichtung und Sicherung.",
+      focus: ["Sturmschäden am Dach", "Undichte Stellen", "Beschädigte Dachrinnen oder Ziegel"],
+      cases: [
+        "Rasche Einschätzung der Dringlichkeit",
+        "Koordination von Notabdichtung und Sicherung",
+        "Weiterleitung an den passenden Dach-Fachbetrieb",
       ],
-      typicalCases: [
-        "Sofortige Notabdichtung bei Unwetter",
-        "Provisorische Reparatur von Sturmschäden",
-        "Sicherung gelockerte Dachteile",
-        "Reparatur oder Austausch von Dachrinnen"
-      ],
-      coordination: [
-        "Sicherheitsprüfung der Arbeitsplätze",
-        "Direkter Kontakt zu Dachdeckerbetrieb",
-        "Organisation von Gerüst falls erforderlich",
-        "Koordination mit Versicherung"
-      ],
-      bgColor: "bg-green-50",
-      borderColor: "border-green-200",
-      iconBg: "bg-green-100", 
-      iconColor: "text-green-600"
     },
     {
+      id: "glaser",
       icon: Eye,
-      title: "Glaser",
-      description: "Einbruchschäden, zerbrochene Scheiben, Schaufenster – professionelle Glasreparatur für Sicherheit und Schutz.",
-      emergencyTypes: [
-        "Einbruchschäden an Fenstern",
-        "Zerbrochene Schaufenster",
-        "Hagelschäden an Glasflächen",
-        "Vandalismus-Schäden",
-        "Defekte Sicherheitsverglasung",
-        "Glasbruch durch Unfälle"
+      title: "Glaser-Notdienst",
+      description:
+        "Bei Glasbruch, beschädigten Fenstern oder Einbruchschäden organisieren wir rasch eine sichere Zwischenlösung und die weitere Behebung.",
+      focus: ["Fenster- und Türverglasung", "Notverglasung", "Sicherung nach Glasbruch"],
+      cases: [
+        "Absicherung gefährdeter Bereiche",
+        "Vermittlung einer geeigneten Glaserei",
+        "Koordination von Notverglasung und Austausch",
       ],
-      typicalCases: [
-        "Sofortige Notverglasungen zum Schutz",
-        "Austausch von Sicherheitsglas",
-        "Reparatur von Schaufenstern",
-        "Installation von Einbruchschutz"
-      ],
-      coordination: [
-        "Sicherheitsbeurteilung der Glasschäden", 
-        "Direkter Kontakt zu Glaserei",
-        "Organisation von Sicherheitsglas",
-        "Koordination mit Sicherheitsdienst"
-      ],
-      bgColor: "bg-cyan-50",
-      borderColor: "border-cyan-200",
-      iconBg: "bg-cyan-100",
-      iconColor: "text-cyan-600"
-    }
+    },
+  ];
+
+  const process = [
+    {
+      icon: Phone,
+      title: "Notfall melden",
+      text: "Sie schildern uns den Vorfall telefonisch oder online. Wir erfassen die Lage rasch und strukturiert.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Passenden Fachbetrieb koordinieren",
+      text: "Wir leiten den Auftrag an einen geeigneten Partnerbetrieb weiter und koordinieren die nächsten Schritte.",
+    },
+    {
+      icon: Clock3,
+      title: "Schnelle Einsatzabwicklung",
+      text: "Unser Fokus liegt auf einer verlässlichen, professionellen und zügigen Organisation des Einsatzes.",
+    },
   ];
 
   return (
-    <div className="min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Unsere Leistungen</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Umfassende Notfall-Koordination für alle Gewerke. Wir organisieren qualifizierte Fachbetriebe 
-            und sorgen für schnelle, professionelle Lösungen in ganz Österreich.
-          </p>
-        </div>
+    <div className="min-h-screen bg-slate-50">
+      <section className="border-b border-slate-200 bg-white">
+        <div className="container mx-auto px-4 py-16 md:py-20">
+          <div className="max-w-4xl">
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-100 px-4 py-1 text-sm font-semibold text-slate-700">
+              Professionelle Notfallkoordination in ganz Österreich
+            </span>
+            <h1 className="mt-6 text-4xl font-bold tracking-tight text-primary md:text-5xl">
+              Unsere Leistungen
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+              Notprofi24 vermittelt und koordiniert qualifizierte Fachbetriebe für dringende Einsätze. Der Fokus liegt auf klaren Abläufen,
+              professioneller Kommunikation und einer verlässlichen Organisation im Notfall.
+            </p>
 
-        <div className="space-y-16">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div 
-                key={service.title}
-                className={`${service.bgColor} ${service.borderColor} border-2 rounded-3xl p-8 md:p-12`}
-                data-testid={`service-detail-${service.title.toLowerCase()}`}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                  {/* Header */}
-                  <div className="lg:col-span-3 text-center mb-8">
-                    <div className={`w-20 h-20 ${service.iconBg} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                      <IconComponent className={`w-10 h-10 ${service.iconColor}`} />
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {process.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                      <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">{service.title}</h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{service.description}</p>
+                    <h2 className="text-lg font-semibold text-slate-900">{item.title}</h2>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
                   </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
-                  {/* Problem Examples */}
-                  <div className="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 className="text-xl font-bold mb-4 text-primary">Häufige Notfälle</h3>
-                    <ul className="space-y-2">
-                      {service.emergencyTypes.map((type, typeIndex) => (
-                        <li key={typeIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary font-bold">•</span>
-                          <span>{type}</span>
-                        </li>
+      <section className="container mx-auto px-4 py-10 md:py-12">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <h2 className="text-xl font-semibold text-slate-900">Direkt zum passenden Leistungsbereich</h2>
+              <p className="mt-1 text-sm text-slate-600">Alle Bereiche sind übersichtlich gegliedert und auf der Seite direkt ansteuerbar.</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {services.map((service) => (
+                <a
+                  key={service.id}
+                  href={`#${service.id}`}
+                  className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-primary hover:text-primary"
+                >
+                  {service.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 pb-16 md:pb-20">
+        <div className="space-y-8">
+          {services.map((service) => {
+            const IconComponent = service.icon;
+
+            return (
+              <section
+                key={service.id}
+                id={service.id}
+                className="scroll-mt-32 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-10"
+                data-testid={`service-detail-${service.id}`}
+              >
+                <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+                  <div>
+                    <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
+                      <IconComponent className="h-8 w-8 text-primary" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{service.title}</h2>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">{service.description}</p>
+
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {service.focus.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700"
+                        >
+                          {item}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
                   </div>
 
-                  {/* Typical Cases */}
-                  <div className="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 className="text-xl font-bold mb-4 text-primary">Typische Einsätze</h3>
-                    <ul className="space-y-2">
-                      {service.typicalCases.map((case_item, caseIndex) => (
-                        <li key={caseIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary font-bold">•</span>
-                          <span>{case_item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* What We Coordinate */}
-                  <div className="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 className="text-xl font-bold mb-4 text-primary">Was wir organisieren</h3>
-                    <ul className="space-y-2">
-                      {service.coordination.map((coord, coordIndex) => (
-                        <li key={coordIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary font-bold">•</span>
-                          <span>{coord}</span>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                    <h3 className="text-lg font-semibold text-slate-900">Was wir in diesem Bereich organisieren</h3>
+                    <ul className="mt-5 space-y-4">
+                      {service.cases.map((caseItem) => (
+                        <li key={caseItem} className="flex items-start gap-3 text-sm leading-6 text-slate-600">
+                          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                          <span>{caseItem}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </div>
+              </section>
             );
           })}
         </div>
+      </section>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16 bg-primary text-white rounded-3xl p-12">
-          <h2 className="text-3xl font-bold mb-6">Benötigen Sie sofort Hilfe?</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Rufen Sie uns an oder melden Sie Ihren Notfall online – wir organisieren umgehend den passenden Fachbetrieb.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="tel:+436766166646" 
-              className="bg-emergency hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center gap-3 transition-colors"
-              data-testid="services-phone-button"
-            >
-              <Wrench className="w-5 h-5" />
-              0676 6166646
-            </a>
-            <a 
-              href="/kontakt"
-              className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-bold text-lg transition-colors"
-              data-testid="services-contact-button"
-            >
-              Notfall online melden
-            </a>
+      <section className="container mx-auto px-4 pb-16 md:pb-20">
+        <div className="overflow-hidden rounded-3xl bg-primary text-white shadow-xl">
+          <div className="grid gap-8 p-8 md:p-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <h2 className="text-3xl font-bold md:text-4xl">Schnelle Hilfe professionell organisiert</h2>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-blue-100">
+                Melden Sie Ihren Notfall direkt telefonisch oder online. Wir kümmern uns um die strukturierte Weiterleitung und die passende Koordination.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 lg:items-end">
+              <a
+                href="tel:+436766166646"
+                className="inline-flex items-center justify-center gap-3 rounded-xl bg-emergency px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-orange-600"
+                data-testid="services-phone-button"
+              >
+                <Phone className="h-5 w-5" />
+                0676 6166646
+              </a>
+              <a
+                href="/kontakt"
+                className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-white/70 px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-white hover:text-primary"
+                data-testid="services-contact-button"
+              >
+                Kontakt aufnehmen
+                <ArrowRight className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

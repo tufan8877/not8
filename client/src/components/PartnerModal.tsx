@@ -107,9 +107,9 @@ export default function PartnerModal({ trigger, open, onOpenChange }: PartnerMod
         <div className="bg-muted/50 rounded-lg p-4 mb-6">
           <h3 className="font-semibold mb-2 text-primary">Ihre Vorteile als Partner:</h3>
           <ul className="text-sm space-y-1 text-muted-foreground">
-            <li>• Mehr Aufträge ohne Werbekosten</li>
-            <li>• Faire Fixgebühr von nur 30€ pro Auftrag</li>
-            <li>• Klare Abläufe und schnelle Abwicklung</li>
+            <li>• Professionell koordinierte Notfall-Anfragen</li>
+            <li>• Strukturierte Abläufe und direkte Kommunikation</li>
+            <li>• Zusammenarbeit mit Fokus auf Qualität und Verlässlichkeit</li>
           </ul>
         </div>
         

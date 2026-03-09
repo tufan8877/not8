@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import EmergencyModal from "@/components/EmergencyModal";
 import PartnerModal from "@/components/PartnerModal";
-import { 
-  Phone, 
-  AlertTriangle, 
-  Handshake, 
-  Clock, 
-  MapPin, 
+import {
+  Phone,
+  Handshake,
+  Clock,
+  MapPin,
   Shield,
   Wrench,
   Zap,
@@ -16,7 +14,11 @@ import {
   Eye,
   Star,
   Check,
-  MessageSquare
+  MessageSquare,
+  ArrowRight,
+  Building2,
+  FileCheck,
+  Headphones,
 } from "lucide-react";
 
 export default function Home() {
@@ -27,235 +29,338 @@ export default function Home() {
     {
       icon: Wrench,
       title: "Installateur",
-      description: "Rohrbrüche, verstopfte Abflüsse, defekte Heizungen, Wasserschäden – wir organisieren schnelle Hilfe bei allen Sanitärnotfällen.",
-      tasks: [
-        "Rohrbruch-Reparaturen",
-        "Verstopfungen beseitigen", 
-        "Heizungsausfälle",
-        "Wasserschäden eindämmen"
+      description:
+        "Koordination schneller Hilfe bei Rohrbruch, Verstopfung, Heizungsstörung und Wasserschaden.",
+      points: [
+        "Rohrbruch und Wasseraustritt",
+        "Verstopfte Leitungen und Abflüsse",
+        "Heizungs- und Warmwasserstörungen",
       ],
-      bgColor: "bg-blue-100",
-      iconColor: "text-primary"
+      iconBg: "bg-blue-50",
+      iconColor: "text-primary",
     },
     {
       icon: Zap,
-      title: "Elektriker", 
-      description: "Stromausfälle, defekte Sicherungen, Kurzschlüsse – unsere Elektrofachkräfte sorgen für sichere Lösungen.",
-      tasks: [
-        "Stromausfall beheben",
-        "Sicherungen erneuern",
-        "Kurzschluss-Reparatur", 
-        "Notbeleuchtung installieren"
+      title: "Elektriker",
+      description:
+        "Unterstützung bei Stromausfall, Sicherungsproblemen, Kurzschluss und sicherheitsrelevanten Störungen.",
+      points: [
+        "Stromausfall und FI-Störungen",
+        "Kurzschluss und Sicherungsprobleme",
+        "Elektrische Notfälle in Gebäuden",
       ],
-      bgColor: "bg-yellow-100",
-      iconColor: "text-warning"
+      iconBg: "bg-yellow-50",
+      iconColor: "text-warning",
     },
     {
       icon: Key,
       title: "Schlosser",
-      description: "Türöffnungen, Schloss-Reparaturen, Sicherheitstechnik – wir besorgen Ihnen wieder Zugang zu Ihren Räumen.",
-      tasks: [
-        "Türöffnung ohne Beschädigung",
-        "Schlösser austauschen",
-        "Einbruchsschäden reparieren",
-        "Sicherheitstechnik installieren"
+      description:
+        "Organisation von Türöffnungen, Schlossreparaturen und Sofortmaßnahmen nach Einbruchschäden.",
+      points: [
+        "Aussperrung und defekte Schlösser",
+        "Schäden nach Einbruch",
+        "Provisorische Sicherung und Austausch",
       ],
-      bgColor: "bg-orange-100", 
-      iconColor: "text-emergency"
+      iconBg: "bg-orange-50",
+      iconColor: "text-emergency",
     },
     {
       icon: HomeIcon,
       title: "Dachdecker",
-      description: "Sturmschäden, undichte Dächer, abgedeckte Ziegel – schnelle Notabdichtung verhindert weitere Schäden.",
-      tasks: [
+      description:
+        "Schnelle Koordination bei Sturmschäden, Undichtheiten und akuten Schäden an Dach und Rinne.",
+      points: [
         "Notabdichtung bei Unwetter",
-        "Sturmschäden beheben",
-        "Dachrinnen reparieren",
-        "Ziegel ersetzen"
+        "Sicherung loser Dachteile",
+        "Schäden an Dachrinne und Eindeckung",
       ],
-      bgColor: "bg-green-100",
-      iconColor: "text-green-600"
+      iconBg: "bg-green-50",
+      iconColor: "text-green-600",
     },
     {
       icon: Eye,
       title: "Glaser",
-      description: "Einbruchschäden, zerbrochene Scheiben, Schaufenster – professionelle Glasreparatur für Sicherheit und Schutz.",
-      tasks: [
-        "Notverglasungen",
-        "Schaufenster reparieren", 
-        "Einbruchschäden beseitigen",
-        "Sicherheitsglas installieren"
+      description:
+        "Vermittlung von Soforthilfe bei Glasbruch, Einbruchschäden und provisorischen Sicherungen.",
+      points: [
+        "Notverglasung und Absicherung",
+        "Fenster- und Schaufensterschäden",
+        "Austausch beschädigter Glaselemente",
       ],
-      bgColor: "bg-blue-100",
-      iconColor: "text-blue-600"
-    }
+      iconBg: "bg-cyan-50",
+      iconColor: "text-cyan-600",
+    },
+  ];
+
+  const strengths = [
+    {
+      icon: Headphones,
+      title: "Zentrale Koordination",
+      description:
+        "Ein Ansprechpartner für die Aufnahme, Einschätzung und Weiterleitung Ihres Anliegens.",
+    },
+    {
+      icon: Shield,
+      title: "Qualifizierte Fachbetriebe",
+      description:
+        "Zusammenarbeit mit geeigneten Partnerbetrieben für unterschiedliche Notfälle und Gewerke.",
+    },
+    {
+      icon: FileCheck,
+      title: "Klare Abläufe",
+      description:
+        "Strukturierte Kommunikation vom Erstkontakt bis zur Weiterleitung an den passenden Betrieb.",
+    },
+  ];
+
+  const targetGroups = [
+    {
+      icon: Building2,
+      title: "Für Hausverwaltungen",
+      description:
+        "Verlässliche Unterstützung bei Notfällen in Wohn- und Gewerbeobjekten – mit zentraler Erreichbarkeit und nachvollziehbaren Abläufen.",
+    },
+    {
+      icon: Wrench,
+      title: "Für Privatkunden",
+      description:
+        "Wenn rasch Unterstützung gebraucht wird, helfen wir bei der Koordination des passenden Fachbetriebs.",
+    },
+  ];
+
+  const process = [
+    {
+      step: "01",
+      title: "Kontaktaufnahme",
+      description:
+        "Sie schildern telefonisch oder online Ihr Anliegen und die Dringlichkeit des Einsatzes.",
+    },
+    {
+      step: "02",
+      title: "Einschätzung & Weiterleitung",
+      description:
+        "Wir prüfen den Fall und koordinieren den passenden Fachbereich beziehungsweise Partnerbetrieb.",
+    },
+    {
+      step: "03",
+      title: "Organisation des Einsatzes",
+      description:
+        "Der zuständige Fachbetrieb übernimmt die weitere Abwicklung des Einsatzes vor Ort.",
+    },
   ];
 
   const states = [
-    "Wien", "Niederösterreich", "Oberösterreich", "Steiermark", 
-    "Tirol", "Salzburg", "Kärnten", "Vorarlberg", "Burgenland"
+    "Wien",
+    "Niederösterreich",
+    "Oberösterreich",
+    "Steiermark",
+    "Tirol",
+    "Salzburg",
+    "Kärnten",
+    "Vorarlberg",
+    "Burgenland",
   ];
 
   const testimonials = [
     {
       rating: 5,
-      text: "Endlich ein Ansprechpartner für alle Notfälle. Die Reaktionszeit war beeindruckend schnell!",
+      text: "Die Kommunikation war klar und professionell. Unser Anliegen wurde rasch an den passenden Betrieb weitergeleitet.",
       author: "Maria Huber",
-      role: "Hausverwaltung Wien"
+      role: "Hausverwaltung Wien",
     },
     {
       rating: 5,
-      text: "Beim Rohrbruch am Sonntag waren innerhalb von 30 Minuten Fachkräfte vor Ort. Perfekt!",
-      author: "Thomas Maier", 
-      role: "Privatkunde Salzburg"
+      text: "Gerade im Notfall ist es hilfreich, einen zentralen Ansprechpartner zu haben. Der Ablauf war strukturiert und verlässlich.",
+      author: "Thomas Maier",
+      role: "Privatkunde Salzburg",
     },
     {
       rating: 5,
-      text: "Professionelle Abwicklung, faire Preise und verlässliche Partner. Gerne wieder!",
+      text: "Professioneller Auftritt, gute Erreichbarkeit und eine saubere Koordination. Genau so wünscht man sich das im Ernstfall.",
       author: "Andreas Schmid",
-      role: "Immobilienverwaltung Linz"
-    }
+      role: "Immobilienverwaltung Linz",
+    },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Structured Data */}
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Notprofi24",
-            "url": "https://notprofi24.at",
-            "telephone": "+436766166646",
-            "areaServed": "AT",
-            "serviceType": "Emergency Services Coordination",
-            "availableService": [
-              {"@type": "Service", "name": "Installateur Notdienst"},
-              {"@type": "Service", "name": "Elektriker Notdienst"},  
-              {"@type": "Service", "name": "Schlosser Notdienst"},
-              {"@type": "Service", "name": "Dachdecker Notdienst"},
-              {"@type": "Service", "name": "Glaser Notdienst"}
-            ]
-          })
+            name: "Notprofi24",
+            url: "https://notprofi24.at",
+            telephone: "+436766166646",
+            areaServed: "AT",
+            serviceType: "Emergency Services Coordination",
+            availableService: [
+              { "@type": "Service", name: "Installateur Notdienst" },
+              { "@type": "Service", name: "Elektriker Notdienst" },
+              { "@type": "Service", name: "Schlosser Notdienst" },
+              { "@type": "Service", name: "Dachdecker Notdienst" },
+              { "@type": "Service", name: "Glaser Notdienst" },
+            ],
+          }),
         }}
       />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Schnelle Hilfe. Österreichweit.
-              <span className="block text-warning">Ein Anruf – wir organisieren den Rest.</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              Für Hausverwaltungen & Privatkunden: Sanitär, Elektro, Schloss, Dach, Glas.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <a 
-                href="tel:+436766166646" 
-                className="bg-emergency hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center gap-3 transition-colors emergency-pulse"
-                data-testid="hero-phone-button"
-              >
-                <Phone className="w-5 h-5" />
-                Jetzt anrufen: 0676 6166646
-              </a>
-              <a 
-                href="https://wa.me/436766166646" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center gap-3 transition-colors"
-                data-testid="hero-whatsapp-button"
-              >
-                <MessageSquare className="w-5 h-5" />
-                Notfall auf WhatsApp melden
-              </a>
-              <a 
-                href="mailto:office@notprofi24.at"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-bold text-lg flex items-center gap-3 transition-colors"
-                data-testid="hero-partner-button"
-              >
-                <Handshake className="w-5 h-5" />
-                Partner werden
-              </a>
+      <section className="relative overflow-hidden bg-slate-950 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.2),transparent_40%)]" />
+        <div className="container relative mx-auto px-4 py-20 md:py-28">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="max-w-3xl">
+              <div className="mb-6 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-slate-200">
+                Österreichweite Koordination von Notfall-Einsätzen
+              </div>
+              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
+                Seriöse Unterstützung, wenn rasch der passende Fachbetrieb gebraucht wird.
+              </h1>
+              <p className="mb-8 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
+                Notprofi24 koordiniert Notfälle in den Bereichen Sanitär, Elektro, Schloss, Dach und Glas.
+                Für Hausverwaltungen und Privatkunden steht ein zentraler Ansprechpartner für die strukturierte
+                Weiterleitung Ihres Anliegens bereit.
+              </p>
+
+              <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                <a
+                  href="tel:+436766166646"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 text-base font-semibold text-slate-950 transition hover:bg-slate-100"
+                  data-testid="hero-phone-button"
+                >
+                  <Phone className="h-5 w-5" />
+                  0676 6166646 anrufen
+                </a>
+                <a
+                  href="/kontakt"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/20 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10"
+                  data-testid="hero-contact-button"
+                >
+                  <ArrowRight className="h-5 w-5" />
+                  Anfrage senden
+                </a>
+                <a
+                  href="https://wa.me/436766166646"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/20 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10"
+                  data-testid="hero-whatsapp-button"
+                >
+                  <MessageSquare className="h-5 w-5" />
+                  WhatsApp
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {[
+                  { label: "Erreichbarkeit", value: "24/7" },
+                  { label: "Abdeckung", value: "9 Bundesländer" },
+                  { label: "Gewerke", value: "5 Fachbereiche" },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p className="mb-2 text-sm text-slate-300">{item.label}</p>
+                    <p className="text-xl font-semibold text-white">{item.value}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                  <Clock className="w-8 h-8" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">24/7 Erreichbar</h3>
-                <p className="text-blue-100">Rund um die Uhr für Sie da</p>
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur">
+              <h2 className="mb-6 text-2xl font-semibold">Auf einen Blick</h2>
+              <div className="space-y-5">
+                {[
+                  {
+                    icon: Clock,
+                    title: "Rasche Erstaufnahme",
+                    text: "Klare Aufnahme Ihres Anliegens und strukturierte Einschätzung der Situation.",
+                  },
+                  {
+                    icon: Shield,
+                    title: "Professioneller Auftritt",
+                    text: "Seriöse Kommunikation und geordnete Weiterleitung an den passenden Fachbereich.",
+                  },
+                  {
+                    icon: MapPin,
+                    title: "Österreichweite Ausrichtung",
+                    text: "Einsatzkoordination für Hausverwaltungen und Privatkunden in ganz Österreich.",
+                  },
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-black/10 p-4">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="mb-1 font-semibold">{item.title}</h3>
+                        <p className="text-sm leading-6 text-slate-300">{item.text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                  <MapPin className="w-8 h-8" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Österreichweit</h3>
-                <p className="text-blue-100">In allen 9 Bundesländern</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                  <Shield className="w-8 h-8" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Qualifizierte Partner</h3>
-                <p className="text-blue-100">Geprüfte Fachbetriebe</p>
+              <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-6 text-slate-300">
+                Ein zentraler Kontakt reduziert Abstimmungsaufwand und schafft Übersicht – besonders bei mehreren
+                Objekten oder dringenden Schadensfällen.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Company Introduction */}
-      <section className="py-16 bg-white">
+      <section className="border-b border-border bg-white py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-              Ein zentraler Ansprechpartner für alle Fälle
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary/70">Notprofi24</p>
+            <h2 className="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">
+              Ein klarer Ablauf statt hektischer Suche im Notfall
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Schluss mit dem Herumtelefonieren bei Notfällen. Notprofi24 koordiniert für Sie den passenden Fachbetrieb 
-              und steuert den gesamten Einsatz. Egal ob Rohrbruch, Stromausfall oder defektes Schloss – 
-              ein Anruf genügt und wir organisieren die schnelle Hilfe.
+            <p className="text-lg leading-8 text-muted-foreground">
+              Im Ernstfall zählt Übersicht. Deshalb setzt Notprofi24 auf einen professionellen, ruhigen und gut
+              nachvollziehbaren Ablauf – von der ersten Kontaktaufnahme bis zur Koordination des zuständigen
+              Fachbetriebs.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="bg-slate-50 py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Unsere Leistungsbereiche</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Fünf Gewerke, ein Ansprechpartner. Wir koordinieren qualifizierte Fachbetriebe für alle Notfälle.
-            </p>
+          <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary/70">Leistungsbereiche</p>
+              <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">Koordination in fünf zentralen Gewerken</h2>
+            </div>
+            <a href="/leistungen" className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80">
+              Alle Leistungen ansehen
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => {
               const IconComponent = service.icon;
               return (
-                <div 
+                <div
                   key={service.title}
-                  className="bg-card rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border"
+                  className="rounded-3xl border border-border bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
                   data-testid={`service-card-${service.title.toLowerCase()}`}
                 >
-                  <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mb-6`}>
-                    <IconComponent className={`w-8 h-8 ${service.iconColor}`} />
+                  <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${service.iconBg}`}>
+                    <IconComponent className={`h-7 w-7 ${service.iconColor}`} />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
-                  <ul className="text-sm space-y-2 text-muted-foreground">
-                    {service.tasks.map((task, index) => (
-                      <li key={index}>• {task}</li>
+                  <h3 className="mb-3 text-2xl font-semibold text-slate-900">{service.title}</h3>
+                  <p className="mb-6 leading-7 text-muted-foreground">{service.description}</p>
+                  <div className="space-y-3 border-t border-border pt-5">
+                    {service.points.map((point, index) => (
+                      <div key={index} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+                        <Check className="mt-0.5 h-4 w-4 text-primary" />
+                        <span>{point}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               );
             })}
@@ -263,149 +368,97 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Property Management Benefits */}
-      <section className="py-16 bg-white">
+      <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Speziell für Hausverwaltungen</h2>
-              <p className="text-lg text-muted-foreground">
-                Ein Ansprechpartner statt fünf. Dokumentierte Einsätze. Verlässliche Koordination.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Modern office building representing professional property management" 
-                  className="rounded-xl shadow-lg w-full h-auto" 
-                />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-primary">Ihre Vorteile im Überblick</h3>
-                <div className="space-y-6">
-                  {[
-                    {
-                      title: "24/7 Erreichbarkeit",
-                      description: "Rückruf binnen 5 Minuten, Disposition unter 15 Minuten"
-                    },
-                    {
-                      title: "Ein Ansprechpartner", 
-                      description: "Für alle fünf Gewerke – keine mehrfachen Kontakte nötig"
-                    },
-                    {
-                      title: "Dokumentierte Einsätze",
-                      description: "Vollständige Dokumentation für Ihre Unterlagen"
-                    },
-                    {
-                      title: "Keine Zusatzkosten",
-                      description: "Für Sie als Hausverwaltung entstehen keine zusätzlichen Kosten"
-                    }
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <Check className="w-4 h-4 text-green-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">{benefit.title}</h4>
-                        <p className="text-muted-foreground">{benefit.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Process Steps */}
-            <div className="bg-muted/50 rounded-2xl p-8 mb-16">
-              <h3 className="text-2xl font-bold text-center mb-8 text-primary">Unser Service-Ablauf</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-xl">1</span>
-                  </div>
-                  <h4 className="font-semibold mb-2">Anliegen melden</h4>
-                  <p className="text-muted-foreground text-sm">Sie rufen an oder nutzen unser Online-Formular</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-xl">2</span>
-                  </div>
-                  <h4 className="font-semibold mb-2">Wir koordinieren</h4>
-                  <p className="text-muted-foreground text-sm">Sofortige Disposition und Beauftragung des Fachbetriebs</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-xl">3</span>
-                  </div>
-                  <h4 className="font-semibold mb-2">Fachbetrieb fährt los</h4>
-                  <p className="text-muted-foreground text-sm">Qualifizierte Lösung direkt vor Ort</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Private Customer Benefits */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Für Privatkunden</h2>
-            <p className="text-lg text-muted-foreground mb-12">
-              Kein Herumtelefonieren – wir finden den passenden Fachbetrieb und koordinieren den Einsatz.
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary/70">Warum Notprofi24</p>
+            <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">Professionell, geordnet und nachvollziehbar</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-muted-foreground">
+              Der Fokus liegt auf klarer Kommunikation, zentraler Erreichbarkeit und einer strukturierten Koordination
+              von Notfallanliegen.
             </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-6 h-6 text-primary" />
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {strengths.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-3xl border border-border bg-slate-50 p-8">
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="mb-3 text-xl font-semibold text-slate-900">{item.title}</h3>
+                  <p className="leading-7 text-muted-foreground">{item.description}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-4">Schnelle Hilfe</h3>
-                <p className="text-muted-foreground">
-                  Ein Anruf genügt – wir organisieren sofort den passenden Fachbetrieb für Ihr Problem.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Eye className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Transparente Abläufe</h3>
-                <p className="text-muted-foreground">
-                  Sie erhalten alle Informationen über Kosten und Ablauf, bevor der Einsatz beginnt.
-                </p>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-white">
+      <section className="bg-slate-950 py-16 text-white md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Das sagen unsere Kunden</h2>
-            <p className="text-lg text-muted-foreground">Vertrauen durch Qualität und Zuverlässigkeit</p>
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Ablauf</p>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">So funktioniert die Koordination</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-300">
+              Der Prozess ist auf Übersicht, rasche Weiterleitung und eine saubere Kommunikation ausgerichtet.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {process.map((item) => (
+              <div key={item.step} className="rounded-3xl border border-white/10 bg-white/5 p-8">
+                <p className="mb-4 text-sm font-semibold tracking-[0.2em] text-slate-400">{item.step}</p>
+                <h3 className="mb-3 text-2xl font-semibold">{item.title}</h3>
+                <p className="leading-7 text-slate-300">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {targetGroups.map((group) => {
+              const Icon = group.icon;
+              return (
+                <div key={group.title} className="rounded-3xl border border-border bg-slate-50 p-8 md:p-10">
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm">
+                    <Icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <h2 className="mb-4 text-2xl font-semibold text-slate-900">{group.title}</h2>
+                  <p className="leading-7 text-muted-foreground">{group.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary/70">Stimmen zur Zusammenarbeit</p>
+            <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">Vertrauen durch klare Abläufe</h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <div 
+              <div
                 key={index}
-                className="bg-card rounded-xl p-6 shadow-lg border border-border"
+                className="rounded-3xl border border-border bg-white p-7 shadow-sm"
                 data-testid={`testimonial-${index}`}
               >
-                <div className="flex items-center mb-4">
-                  <div className="flex text-warning">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
+                <div className="mb-5 flex text-warning">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
                 </div>
-                <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
+                <p className="mb-6 leading-7 text-slate-700">“{testimonial.text}”</p>
                 <div>
-                  <p className="font-semibold">{testimonial.author}</p>
+                  <p className="font-semibold text-slate-900">{testimonial.author}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
@@ -414,38 +467,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Coverage Area */}
-      <section className="py-16 bg-primary text-white">
+      <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Österreichweit verfügbar</h2>
-            <p className="text-xl text-blue-100">In allen 9 Bundesländern für Sie da</p>
-          </div>
+          <div className="rounded-[2rem] bg-primary px-6 py-12 text-white md:px-10 md:py-14">
+            <div className="mb-10 flex flex-col gap-4 text-center">
+              <h2 className="text-3xl font-bold md:text-4xl">Österreichweit erreichbar</h2>
+              <p className="mx-auto max-w-2xl text-lg text-blue-100">
+                Notprofi24 ist auf eine österreichweite Einsatzkoordination in allen neun Bundesländern ausgerichtet.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {states.map((state, index) => (
-              <div 
-                key={state}
-                className="text-center p-4 bg-white/10 rounded-lg"
-                data-testid={`state-${state.toLowerCase().replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ü/g, 'ue')}`}
-              >
-                <MapPin className="w-6 h-6 mx-auto mb-2" />
-                <p className="font-medium">{state}</p>
-              </div>
-            ))}
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+              {states.map((state) => (
+                <div
+                  key={state}
+                  className="rounded-2xl border border-white/10 bg-white/10 p-4 text-center"
+                  data-testid={`state-${state
+                    .toLowerCase()
+                    .replace(/ö/g, "oe")
+                    .replace(/ä/g, "ae")
+                    .replace(/ü/g, "ue")}`}
+                >
+                  <MapPin className="mx-auto mb-2 h-5 w-5" />
+                  <p className="font-medium">{state}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Modals */}
-      <EmergencyModal 
-        open={emergencyModalOpen} 
-        onOpenChange={setEmergencyModalOpen} 
-      />
-      <PartnerModal 
-        open={partnerModalOpen} 
-        onOpenChange={setPartnerModalOpen} 
-      />
+      <section className="bg-slate-950 py-16 text-white md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-5 text-3xl font-bold md:text-4xl">Sie benötigen Unterstützung bei einem Notfall?</h2>
+            <p className="mb-8 text-lg leading-8 text-slate-300">
+              Kontaktieren Sie Notprofi24 telefonisch oder über das Kontaktformular. Wir erfassen Ihr Anliegen und
+              koordinieren die weitere Weiterleitung.
+            </p>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="tel:+436766166646"
+                className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-slate-950 transition hover:bg-slate-100"
+                data-testid="final-phone-button"
+              >
+                <Phone className="h-5 w-5" />
+                0676 6166646
+              </a>
+              <a
+                href="/kontakt"
+                className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white/10"
+                data-testid="final-contact-button"
+              >
+                <ArrowRight className="h-5 w-5" />
+                Zur Kontaktseite
+              </a>
+              <button
+                type="button"
+                onClick={() => setPartnerModalOpen(true)}
+                className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white/10"
+                data-testid="final-partner-button"
+              >
+                <Handshake className="h-5 w-5" />
+                Partner werden
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <EmergencyModal open={emergencyModalOpen} onOpenChange={setEmergencyModalOpen} />
+      <PartnerModal open={partnerModalOpen} onOpenChange={setPartnerModalOpen} />
     </div>
   );
 }

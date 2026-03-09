@@ -1,15 +1,12 @@
 import { 
   Handshake, 
   TrendingUp, 
-  Euro, 
+  ShieldCheck, 
   Clock, 
   CheckCircle, 
-  Users, 
   Phone,
-  MapPin,
   Star,
-  Award,
-  Zap
+  Award
 } from "lucide-react";
 
 export default function PartnerServices() {
@@ -29,14 +26,14 @@ export default function PartnerServices() {
       iconColor: "text-blue-600"
     },
     {
-      icon: Euro,
-      title: "Faire Konditionen",
-      description: "Transparente Fixgebühr von nur 30€ pro erfolgreich übertragenen Auftrag",
+      icon: ShieldCheck,
+      title: "Geprüfte Zusammenarbeit",
+      description: "Professionelle Prozesse und ein verlässlicher Rahmen für die Zusammenarbeit",
       details: [
-        "Keine monatlichen Grundkosten",
-        "Keine versteckten Gebühren",
-        "Bezahlung nur bei tatsächlicher Auftragsvergabe", 
-        "Kalkulierbare Kosten für Ihre Betriebsführung"
+        "Klare Ansprechpartner und strukturierte Abläufe",
+        "Transparente Kommunikation im Einsatzfall",
+        "Sorgfältige Partnerprüfung und Qualitätsanspruch",
+        "Verlässliche Zusammenarbeit auf Augenhöhe"
       ],
       bgColor: "bg-green-50",
       iconColor: "text-green-600"
@@ -179,8 +176,9 @@ export default function PartnerServices() {
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Partner werden</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Werden Sie Teil unseres österreichweiten Partnernetzwerks und profitieren Sie von 
-            einem konstanten Zufluss qualifizierter Notfall-Aufträge ohne eigene Werbekosten.
+            Werden Sie Teil unseres österreichweiten Partnernetzwerks und erweitern Sie Ihre 
+            Reichweite durch professionell koordinierte Notfall-Einsätze, klare Abläufe und 
+            verlässliche Zusammenarbeit.
           </p>
         </div>
 
@@ -295,7 +293,7 @@ export default function PartnerServices() {
 
         {/* Statistics */}
         <div className="mb-20 bg-muted/30 rounded-3xl p-8 md:p-12">
-          <h2 className="text-3xl font-bold text-center mb-12 text-primary">Unser Partnernetzwerk in Zahlen</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-primary">Unser Partnernetzwerk auf einen Blick</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-primary mb-2">500+</div>
@@ -310,8 +308,8 @@ export default function PartnerServices() {
               <div className="text-muted-foreground">Bundesländer</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">30€</div>
-              <div className="text-muted-foreground">Pro Auftrag</div>
+              <div className="text-4xl font-bold text-primary mb-2">365</div>
+              <div className="text-muted-foreground">Tage Einsatzbereitschaft</div>
             </div>
           </div>
         </div>
@@ -329,8 +327,8 @@ export default function PartnerServices() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-4 italic">
-                "Seit wir Partner bei notprofi24 sind, haben wir 40% mehr Notfall-Aufträge. 
-                Die Abwicklung ist professionell und die Kunden sind bereits vorqualifiziert."
+                "Die Zusammenarbeit ist professionell organisiert und die Einsätze werden klar 
+                kommuniziert. Für unseren Betrieb ist besonders die strukturierte Abwicklung ein großer Vorteil."
               </p>
               <div>
                 <p className="font-semibold">Johann Müller</p>
@@ -346,8 +344,8 @@ export default function PartnerServices() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-4 italic">
-                "Die 30€ Gebühr pro Auftrag sind sehr fair kalkuliert. Wir sparen uns teure 
-                Werbung und haben trotzdem konstante Auslastung auch am Wochenende."
+                "Wir schätzen die verlässliche Kommunikation und die gute Erreichbarkeit. 
+                Anfragen kommen strukturiert an und lassen sich im Tagesgeschäft effizient abwickeln."
               </p>
               <div>
                 <p className="font-semibold">Stefan Hofer</p>
@@ -361,8 +359,8 @@ export default function PartnerServices() {
         <div className="text-center bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-12">
           <h2 className="text-3xl font-bold mb-6">Starten Sie jetzt als Partner</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Werden Sie Teil unseres erfolgreichen Partnernetzwerks und profitieren Sie von 
-            einem konstanten Strom qualifizierter Notfall-Aufträge.
+            Bewerben Sie sich als Partnerbetrieb und werden Sie Teil eines österreichweiten 
+            Netzwerks mit professioneller Koordination und hohem Qualitätsanspruch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
